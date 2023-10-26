@@ -19,3 +19,4 @@
 - https://github.com/dwyl/learn-postgresql
 - https://render.com/docs/databases
 - https://www.w3schools.com/postgresql/postgresql_create_demodatabase.php
+- https://www.w3resource.com/PostgreSQL/tutorial.php
