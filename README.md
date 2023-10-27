@@ -25,6 +25,9 @@
 https://solid.edu.vn/khoa-lap-trinh-sql-va-plpgsql-voi-postgresql1985.html
 
 
+https://www.postgresqltutorial.com/ ==> Outline đầy đủ, rõ ràng
+
+
 01 Giới thiệu khóa học.
 02 Giới thiệu về cơ sở dữ liệu SQL và PostgreSQL.
 03 Ngôn ngữ định nghĩa dữ liệu SQL - Tạo cơ sở dữ liệu mẫu.
