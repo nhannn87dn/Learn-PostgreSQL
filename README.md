@@ -25,6 +25,8 @@
 11. Transactions, Import & Export Data
 12. Conditional Expressions & Operators
 
+
+
 **Advanced PostgreSQL**
 
 1. PostgreSQL PL/pgSQL
@@ -49,3 +51,12 @@ Best Guides
 - https://www.postgresqltutorial.com
 - https://launchschool.com/books/sql_first_edition/read/multi_tables#designingtables
 
+## Làm rõ một số khái nhiệm
+
+- Data (dữ liệu) là gì
+- Database là gì
+- Database Management là gì
+- Database Management System (DBMS)
+- Relationship Database Management System (RDBMS)
+- Database Models
+- SQL (Structured Query Language) là gì
