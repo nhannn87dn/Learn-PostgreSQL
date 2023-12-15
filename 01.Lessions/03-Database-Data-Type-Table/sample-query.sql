@@ -3,6 +3,25 @@
 -- Quan hệ một-một (One-to-One Relationship)
 -- https://launchschool.com/books/sql_first_edition/read/multi_tables#designingtables
 
+
+
+CREATE TABLE table_example (
+	user_id serial PRIMARY KEY,
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+  birthday DATE NULL,
+  age INTEGER NULL,
+  is_admin BOOLEAN NOT NULL DEFAULT True,
+  roles TEXT [],
+  uid uuid DEFAULT uuid_generate_v4 (),
+	created_on TIMESTAMP NOT NULL,
+  last_login TIMESTAMP DEFAULT NOW(),
+  price NUMERIC(18,2) NOT NULL DEFAULT 0,
+  sort SMALLINT NOT NULL DEFAULT 100
+);
+
+
 CREATE TABLE users (
   id serial,
   username VARCHAR(25) NOT NULL,

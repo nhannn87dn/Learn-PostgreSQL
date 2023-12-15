@@ -10,30 +10,19 @@
 
 ## Outline
 
-**Basic PostgreSQL**
+**PostgreSQL**
 
-1. Getting Started: Install & Config PostgreSQL
-2. Managing Tables: Data types and Management Table
-3. Database-Design-Concept: Understanding PostgreSQL Constraints
-4. Querying Data
-5. Filtering Data
-6. Joining Multiple Tables
-7. Grouping sets, Cube, and Rollup
-8. Sub Query
-9. Common Table Expressions
-10. Modifying Data
-11. Transactions, Import & Export Data
-12. Conditional Expressions & Operators
+1. Database Design Concept
+2. Normalization and Intro PostgreSQL
+3. Databases, Data Type and Table
+4. Modifying Data: Insert, Update, Delete
+5. Querying Data: Select, Group by, Grouping sets, Cube, and Rollup
+6. Advanced Queries and Joins: Sub Query, Join, Union
+7. Transactions, Conditional Expressions & Operators
+8. PL/pgSQL: Variables & constants, Control structure, Function, Exception handling, Stored procedures
+9. Views and Triggers
+10. Indexes and PostgreSQL Administration
 
-
-
-**Advanced PostgreSQL**
-
-1. PostgreSQL PL/pgSQL
-2. PostgreSQL Triggers
-3. PostgreSQL Views
-4. PostgreSQL Indexes
-5. PostgreSQL Administration
 
 ## References
 
@@ -50,13 +39,3 @@ Best Guides
 
 - https://www.postgresqltutorial.com
 - https://launchschool.com/books/sql_first_edition/read/multi_tables#designingtables
-
-## Làm rõ một số khái nhiệm
-
-- Data (dữ liệu) là gì
-- Database là gì
-- Database Management là gì
-- Database Management System (DBMS)
-- Relationship Database Management System (RDBMS)
-- Database Models
-- SQL (Structured Query Language) là gì
