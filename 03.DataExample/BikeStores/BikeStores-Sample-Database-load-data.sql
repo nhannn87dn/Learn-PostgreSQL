@@ -1811,7 +1811,7 @@ INSERT INTO customers (customer_id, first_name, last_name, phone, email, street,
 
 INSERT INTO stores (store_id, store_name, phone, email, street, city, state, zip_code) VALUES (1, E'Santa Cruz Bikes', E'(831) 476-4321', E'santacruz@bikes.shop', E'3700 Portola Drive', E'Santa Cruz', E'CA', E'95060');
 INSERT INTO stores (store_id, store_name, phone, email, street, city, state, zip_code) VALUES (2, E'Baldwin Bikes', E'(516) 379-8888', E'baldwin@bikes.shop', E'4200 Chestnut Lane', E'Baldwin', E'NY', E'11432');
-INSERT INTO stores (store_id, store_name, phone, email, street, city, state, zip_code) VALUES (3, E'Rowlett Bikes', E'(972) 530-5555', E'rowlett@bikes.shop', E'8000 Fairway Avenue', E'Rowlett', E'TX', E'75088');
+INSERT INTO stores (store_id, store_name, phone, email, street, city, state, zip_code) VALUES (3, E'Rowlett Bikes', null, E'rowlett@bikes.shop', E'8000 Fairway Avenue', E'Rowlett', E'TX', E'75088');
 
 
 
@@ -2767,16 +2767,16 @@ INSERT INTO stocks (store_id, product_id, quantity) VALUES (3, 313, 0);
 
 
 
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (1, E'Fabiola', E'Jackson', E'fabiola.jackson@bikes.shop', E'(831) 555-5554', true, 1, NULL);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (2, E'Mireya', E'Copeland', E'mireya.copeland@bikes.shop', E'(831) 555-5555', true, 1, 1);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (3, E'Genna', E'Serrano', E'genna.serrano@bikes.shop', E'(831) 555-5556', true, 1, 2);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (4, E'Virgie', E'Wiggins', E'virgie.wiggins@bikes.shop', E'(831) 555-5557', true, 1, 2);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (5, E'Jannette', E'David', E'jannette.david@bikes.shop', E'(516) 379-4444', true, 2, 1);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (6, E'Marcelene', E'Boyer', E'marcelene.boyer@bikes.shop', E'(516) 379-4445', true, 2, 5);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (7, E'Venita', E'Daniel', E'venita.daniel@bikes.shop', E'(516) 379-4446', true, 2, 5);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (8, E'Kali', E'Vargas', E'kali.vargas@bikes.shop', E'(972) 530-5555', true, 3, 1);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (9, E'Layla', E'Terrell', E'layla.terrell@bikes.shop', E'(972) 530-5556', true, 3, 7);
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES (10, E'Bernardine', E'Houston', E'bernardine.houston@bikes.shop', E'(972) 530-5557', true, 3, 7);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (1, E'Fabiola', E'Jackson', E'fabiola.jackson@bikes.shop', E'(831) 555-5554', true, 1, NULL,0);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (2, E'Mireya', E'Copeland', E'mireya.copeland@bikes.shop', E'(831) 555-5555', true, 1, 1,1);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (3, E'Genna', E'Serrano', E'genna.serrano@bikes.shop', E'(831) 555-5556', true, 1, 2,0);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (4, E'Virgie', E'Wiggins', E'virgie.wiggins@bikes.shop', E'(831) 555-5557', true, 1, 2,0);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (5, E'Jannette', E'David', E'jannette.david@bikes.shop', E'(516) 379-4444', true, 2, 1,1);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (6, E'Marcelene', E'Boyer', E'marcelene.boyer@bikes.shop', E'(516) 379-4445', true, 2, 5,1);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (7, E'Venita', E'Daniel', E'venita.daniel@bikes.shop', E'(516) 379-4446', true, 2, 5,0);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (8, E'Kali', E'Vargas', E'kali.vargas@bikes.shop', E'(972) 530-5555', true, 3, 1,0);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (9, E'Layla', E'Terrell', E'layla.terrell@bikes.shop', E'(972) 530-5556', true, 3, 7,0);
+INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id, gender) VALUES (10, E'Bernardine', E'Houston', E'bernardine.houston@bikes.shop', E'(972) 530-5557', true, 3, 7,10);
 
 
 INSERT INTO orders (order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id, staff_id, order_note, shipping_address, shipping_city, payment_type, order_amount) VALUES (1, 259, 4, CAST(E'2016-01-01' AS Date), CAST(E'2016-01-03' AS Date), CAST(E'2016-01-03' AS Date), 1, 2, NULL, E'9680 E. Somerset Street ', E'Pleasanton', 4, CAST(11397.37 AS Decimal(18, 2)));

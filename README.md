@@ -1,5 +1,7 @@
 # Learn-PostgreSQL
 
+Note: cập nhật lại staff có gender
+
 ## Why PostgreSQL ?
 
 - PostgreSQL is an advanced relational database system.
