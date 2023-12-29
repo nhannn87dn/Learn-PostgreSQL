@@ -94,3 +94,78 @@ AFTER INSERT ON order_items
 FOR EACH ROW
 EXECUTE FUNCTION uft_update_product_stock();
 
+
+
+CREATE OR REPLACE view_name 
+AS 
+query
+
+
+CREATE VIEW v_daily_sales --đặt tên với prefix v_
+AS
+SELECT
+    EXTRACT(YEAR FROM order_date) AS y,
+    EXTRACT(MONTH FROM order_date) AS m,
+    EXTRACT(DAY FROM order_date) AS d,
+    p.product_id,
+    product_name,
+    quantity * i.price AS sales
+FROM
+    orders AS o
+INNER JOIN order_items AS i
+    ON o.order_id = i.order_id
+INNER JOIN products AS p
+    ON p.product_id = i.product_id;
+
+
+SELECT * FROM v_daily_sales;
+
+
+
+ALTER VIEW v_daily_sales RENAME TO v_daily_sales_new;
+
+DROP VIEW [ IF EXISTS ] view_name;
+
+DROP VIEW [IF EXISTS] view_name
+[CASCADE | RESTRICT]
+
+
+
+CREATE MATERIALIZED VIEW view_name
+AS
+query
+WITH [NO] DATA;
+
+
+REFRESH MATERIALIZED VIEW [CONCURRENTLY] view_name;
+
+DROP MATERIALIZED VIEW view_name;
+
+CREATE VIEW v_storesByPhone --đặt tên với prefix v_
+AS
+SELECT * FROM stores
+WHERE phone IS NULL --Nếu WHERE không thõa mãn--> View bị Lỗi
+WITH CHECK OPTION;
+
+UPDATE v_storesByPhone SET phone = 'test' 
+WHERE  store_id = 3;
+
+
+
+--View A
+CREATE VIEW v_storesNull --đặt tên với prefix v_
+AS
+-- Lấy dữ liệu từ View B
+SELECT * FROM v_storesByPhone
+WITH CHECK OPTION;
+
+
+--View B
+CREATE VIEW v_storesByPhone --đặt tên với prefix v_
+AS
+SELECT * FROM stores
+WHERE phone IS NULL --Nếu WHERE không thõa mãn--> View bị Lỗi
+WITH CHECK OPTION;
+
+
+
