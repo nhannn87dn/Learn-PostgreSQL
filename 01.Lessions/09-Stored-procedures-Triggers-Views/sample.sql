@@ -141,31 +141,45 @@ REFRESH MATERIALIZED VIEW [CONCURRENTLY] view_name;
 
 DROP MATERIALIZED VIEW view_name;
 
-CREATE VIEW v_storesByPhone --đặt tên với prefix v_
-AS
-SELECT * FROM stores
-WHERE phone IS NULL --Nếu WHERE không thõa mãn--> View bị Lỗi
-WITH CHECK OPTION;
-
-UPDATE v_storesByPhone SET phone = 'test' 
-WHERE  store_id = 3;
 
 
 
---View A
-CREATE VIEW v_storesNull --đặt tên với prefix v_
-AS
--- Lấy dữ liệu từ View B
-SELECT * FROM v_storesByPhone
-WITH CHECK OPTION;
+
+CREATE TABLE employees (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50),
+  department_id INT
+);
+
+-- Chèn dữ liệu vào bảng employees
+INSERT INTO employees (name, department_id) VALUES ('Alice', 1);
+INSERT INTO employees (name, department_id) VALUES ('Bob', 2);
+INSERT INTO employees (name, department_id) VALUES (NULL, 2);
+
+-- Tạo View a, lấy tên là NULL, không có CHECK OPTION
+CREATE OR REPLACE VIEW view_A AS
+SELECT *
+FROM employees
+WHERE name IS NULL;
+-- Hiển thị dữ liệu từ view_A
+SELECT * FROM view_A;
+--Cập nhật Dữ liệu từ View A ==> Cập nhật OK
+UPDATE view_A SET name = 'Adrew' WHERE department_id = 2;
+
+-- Tạo lại giá trị NULL để demo View B
+UPDATE employees SET name = NULL WHERE id = 3;
+-- Tạo view B với WITH CASCADED CHECK OPTION
+CREATE OR REPLACE VIEW view_B AS
+SELECT * FROM view_A WHERE department_id = 2
+WITH CASCADED CHECK OPTION;
+-- Hiển thị dữ liệu từ view_B
+SELECT * FROM view_B;
+--Cập nhật Dữ liệu từ View B ==> Lỗi
+UPDATE view_B  SET name = 'Adrew' WHERE id = 3;
 
 
---View B
-CREATE VIEW v_storesByPhone --đặt tên với prefix v_
-AS
-SELECT * FROM stores
-WHERE phone IS NULL --Nếu WHERE không thõa mãn--> View bị Lỗi
-WITH CHECK OPTION;
-
+CREATE OR REPLACE VIEW view_B AS
+SELECT * FROM view_A WHERE department_id = 2
+WITH LOCAL CHECK OPTION;
 
 
